@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"solution-challange/config"
 	"solution-challange/route"
 
@@ -23,6 +24,11 @@ func main() {
 	route.UserRoute(app)
 	route.NebulizerRoute(app)
 	route.WaterRoute(app)
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 
 	app.Listen(":6000")
 }
