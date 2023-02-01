@@ -13,6 +13,7 @@ func main() {
 	config.ConnectDB()
 
 	route.UserRoute(app)
+	route.NebulizerRoute(app)
 
 	app.Listen(":6000")
 }

@@ -8,7 +8,7 @@ import (
 	"solution-challange/response"
 	"time"
 
-	"github.com/go-playground/validator/v10"
+	// "github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -16,7 +16,8 @@ import (
 )
 
 var userCollection *mongo.Collection = config.GetCollection(config.DB, "users")
-var validate = validator.New()
+
+// var validate = validator.New()
 
 func GetAllUser(c *fiber.Ctx) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
